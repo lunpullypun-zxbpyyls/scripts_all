@@ -1,0 +1,8 @@
+
+    awful.key({ modkey }, "b",
+          function ()
+              myscreen = awful.screen.focused()
+              myscreen.mywibox.visible = not myscreen.mywibox.visible
+          end,
+          {description = "toggle statusbar"}
+),

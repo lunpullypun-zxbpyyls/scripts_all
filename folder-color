@@ -1,0 +1,22 @@
+#!/bin/sh
+
+show_color() {
+    perl -e 'foreach $a(@ARGV){print "\e[48;2;".join(";",unpack("C*",pack("H*",$a)))."m          \e[49m  "};print "\n"' "$@"
+}
+
+echo""
+echo "  black      bluegrey      cyan       green       indigo      nordic"
+show_color "4F4F4F" "607d8b" "00bcd4" "87b158" "5c6bc0" "82abaa"
+show_color "4F4F4F" "607d8b" "00bcd4" "87b158" "5c6bc0" "82abaa"
+echo ""
+echo "   pink        teal       white        blue       brown     deeporange"
+show_color "f06292" "16a085" "e4e4e4" "5294e2" "ae8e6c" "eb6637"
+show_color "f06292" "16a085" "e4e4e4" "5294e2" "ae8e6c" "eb6637"
+echo ""
+echo "   grey      magenta      orange       red        violet      yellow"
+show_color "8e8e8e" "ca71df" "ee923a" "e25252" "7e57c2" "e2b322"
+show_color "8e8e8e" "ca71df" "ee923a" "e25252" "7e57c2" "e2b322"
+echo ""
+read -p 'color: ' color
+papirus-folders -C $color -t Papirus
+echo ""
