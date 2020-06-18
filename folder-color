@@ -19,4 +19,5 @@ show_color "8e8e8e" "ca71df" "ee923a" "e25252" "7e57c2" "e2b322"
 echo ""
 read -p 'color: ' color
 papirus-folders -C $color -t Papirus
+papirus-folders -C $color -t Papirus-Dark
 echo ""
