@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# ufetch-mint - tiny system info for linux mint
+# ufetch-ubuntu - tiny system info for ubuntu
 
 ## INFO
 
@@ -54,24 +54,22 @@ if [ -x "$(command -v tput)" ]; then
 fi
 
 # you can change these
-lc="${reset}${bold}${green}"        # labels
-nc="${reset}${bold}${green}"        # user and hostname
+lc="${reset}${bold}${yellow}"       # labels
+nc="${reset}${bold}${yellow}"       # user and hostname
 ic="${reset}"                       # info
-c0="${reset}${green}"               # first color
-c1="${reset}${white}"               # second color
-c2="${reset}${bold}${green}"        # third color
+c0="${reset}${yellow}"              # first color
 
 ## OUTPUT
 
 cat <<EOF
 
-${c0}   _____________   ${nc}${USER}${ic}@${nc}${host}${reset}
-${c0}  |_            \\  ${lc}OS:        ${ic}${os}${reset}
-${c0}    |  ${c1}| _____  ${c0}|  ${lc}KERNEL:    ${ic}${kernel}${reset} 
-${c0}    |  ${c1}| | | |  ${c0}|  ${lc}UPTIME:    ${ic}${uptime}${reset}
-${c0}    |  ${c1}| | | |  ${c0}|  ${lc}PACKAGES:  ${ic}${packages}${reset} 
-${c0}    |  ${c1}\\__${c2}___/  ${c0}|  ${lc}SHELL:     ${ic}${shell}${reset}
-${c0}    \\___________/  ${lc}${uitype}:        ${ic}${ui}${reset}
+${nc}${USER}${ic}@${nc}${host}${reset}
+${lc}OS:        ${ic}${os}${reset}
+${lc}KERNEL:    ${ic}${kernel}${reset}
+${lc}UPTIME:    ${ic}${uptime}${reset}
+${lc}PACKAGES:  ${ic}${packages}${reset}
+${lc}SHELL:     ${ic}${shell}${reset}
+${lc}${uitype}:        ${ic}${ui}${reset}
 
 EOF
 
